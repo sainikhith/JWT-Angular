@@ -1,0 +1,34 @@
+<form #userRegistrationForm="ngForm" (ngSubmit)="OnSubmit(userRegistrationForm)">
+    <div>
+        <label>EmpID</label>
+        <input class="validate" type="text" name="ID" #ID="ngModel" [(ngModel)]="user.ID">
+    </div>
+    <div >
+        <label>Emp Name</label>
+        <input class="validate" type="text" name="UserName" #UserName="ngModel" [(ngModel)]="user.UserName">
+    </div>
+    <div >
+        <label>Password </label>
+        <input class="validate" type="password" name="Password" #Password="ngModel" [(ngModel)]="user.Password">
+
+    </div>
+
+
+    <div >
+        <label>Email</label>
+        <input class="validate" type="text" name="Email" #Email="ngModel" [(ngModel)]="user.Email" [pattern]="emailPattern">
+    </div>
+
+    <div >
+        <label>mobile </label>
+        <input type="text" name="Mobile" #Mobile="ngModel" [(ngModel)]="user.Mobile">
+
+    </div>
+    <div >
+            <button class="btn-submit" type="submit">Submit </button>
+
+    </div>
+   
+
+
+</form>

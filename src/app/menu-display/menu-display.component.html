@@ -1,0 +1,76 @@
+<a routerLink="/hello">Test Hello</a>
+
+
+<!--
+<h1>head</h1>
+<div *ngFor="let mn of Menu" >
+  <a routerLink="/hello">
+          {{mn.menu}}
+  </a>
+</div> -->
+<!-- <div *ngFor="let m of routesData" >
+  <a [routerLink]="m.path">
+          {{m.path}}
+  </a>
+</div> -->
+<!-- <h2>test</h2>
+
+<div class="btn-group" *ngFor="let m of routesData;let i=index" role="group" aria-label="Button group with nested dropdown">
+  <button type="button" class="btn btn-primary">
+    {{m.path}}
+  </button>
+  <div *ngIf="m.children" class="btn-group" role="group">
+    <div *ngFor="let s of m.children">
+      <a [routerLink]="s.path">{{s.path}}</a>
+    </div>
+
+</div>
+</div>
+<button (click)="logOut()">logOut</button> -->
+<!--
+
+   <div class="dropdown-menu" aria-labelledby="btnGroupDrop1" *ngFor="let s of Submenu" >
+      <a class="dropdown-item" href="#">{{s.description}}</a>
+      <a class="dropdown-item" href="#">Dropdown link</a>
+    </div>
+
+
+
+  <a *ngFor="#route of routes"
+        [routerLink]="route.path">
+        {{route.name}}
+</a> -->
+<!-- <li *ngFor="let m of Menu">
+  <a [routerLink]="m.menu">{{m.menu}}</a>
+</li> -->
+<!--
+
+<a routerLink="signup">Goto Home</a>
+<a routerLink="/signup">Goto Home</a> -->
+
+
+
+
+
+<html lang="en">
+
+
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <ul class="nav navbar-nav" *ngFor="let m of routesData;let i=index">
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#"> {{m.path}}</a>
+          <ul class="dropdown-menu" *ngIf="m.children">
+            <li *ngFor="let s of m.children">
+              <a class="nav-link" [routerLink]="s.path">{{s.path}}</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</body>
+
+</html>

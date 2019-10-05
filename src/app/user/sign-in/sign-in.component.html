@@ -1,0 +1,51 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div *ngIf="hide" class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <!-- <img src="~/src/images/audreeLogo.png" id="icon" alt="User Icon" /> -->
+    </div>
+
+    <!-- Login Form -->
+    <form  #loginForm="ngForm" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
+      <input #UserName ngModel name="UserName" type="text" id="login" class="fadeIn second" name="login" placeholder="Username">
+      <input #Password ngModel name="Password" type="password" id="password" class="fadeIn third" name="login" placeholder="Password">
+      <input type="submit" class="fadeIn fourth" value="Log In">
+    </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <a class="underlineHover" href="#">Forgot Password?</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div *ngIf="show">
+  <app-menu-display [Menu]="Menus" [Submenu]="Submenus" [routesData]="routes" ></app-menu-display>
+</div>
+
+<!-- <form #loginForm="ngForm" (ngSubmit)="OnSubmit(UserName.value,Password.value)">
+    <label>User Name </label>
+    <input #UserName ngModel name="UserName" type="text">
+    <br>
+    <br>
+    <label>Password </label>
+    <input #Password ngModel name="Password" type="Password">
+    <br>
+    <br>
+    <button type="submit">LogIn </button>&nbsp;&nbsp;
+    <button (click)=signup()>signup </button>
+</form> -->
+<!-- <div *ngIf="isLogInError" class="red-text.center-error-message">
+    <i class=" material-icons"></i> incorrect UserNameor Password
+</div>  -->
